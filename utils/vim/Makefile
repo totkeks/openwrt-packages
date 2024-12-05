@@ -208,7 +208,7 @@ define Package/vim/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/vim_tiny $(1)/usr/bin/vim
 	$(INSTALL_DIR) $(1)/usr/share/vim
-	$(INSTALL_CONF) ./files/defaults.vim $(1)/usr/share/vim/
+	$(INSTALL_CONF) ./files/defaults.vim $(1)/usr/share/vim/vim$(VIMVER)/
 endef
 
 define Package/vim-full/install
@@ -216,7 +216,7 @@ define Package/vim-full/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/vim_normal $(1)/usr/bin/vim
 	$(INSTALL_DIR) $(1)/usr/share/vim
 	$(LN) vim $(1)/usr/bin/vimdiff
-	$(INSTALL_CONF) ./files/defaults.vim.full $(1)/usr/share/vim/defaults.vim
+	$(INSTALL_CONF) ./files/defaults.vim.full $(1)/usr/share/vim/vim$(VIMVER)/defaults.vim
 endef
 
 
@@ -226,7 +226,7 @@ define Package/vim-fuller/install
 	$(INSTALL_DIR) $(1)/usr/share/vim
 	$(LN) vim $(1)/usr/bin/vimdiff
 	$(CP) $(PKG_INSTALL_DIR)/usr/share/vim/vim$(VIMVER) $(1)/usr/share/vim
-	$(INSTALL_CONF) ./files/defaults.vim.full $(1)/usr/share/vim/defaults.vim
+	$(INSTALL_CONF) ./files/defaults.vim.full $(1)/usr/share/vim/vim$(VIMVER)/defaults.vim
 endef
 
 
